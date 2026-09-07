@@ -60,6 +60,27 @@ Squad saves live in:
 
 ---
 
+## Supported versions
+
+Right now the editor supports **EA Sports FC 25 only**. That is the version its
+format work was done against, and the only one it has been tested on.
+
+Support for other FC and FIFA versions is planned. The save format is closely
+related across versions, so the groundwork is largely shared, but a few things
+have to be confirmed per version before a save can be written safely:
+
+- the offsets of the container checksum and of the payload it covers
+- the table short names and the schema file that maps them to readable names
+- which tables carry a trailing index block
+
+**Contributions are very welcome.** If you have saves from another version and
+want to help, open an issue or send a pull request. Adding a version mostly
+means confirming the points above and adding a test that pins them down, and
+`docs/FORMAT.md` explains how each one was worked out for FC 25 so the same
+method can be repeated.
+
+---
+
 ## A word of caution
 
 Editing save files is at your own risk. Back up anything you care about.
@@ -107,6 +128,17 @@ export SQUAD_EDITOR_TEST_SAVE=/path/to/Squads20260101120000000
 export SQUAD_EDITOR_TEST_REFERENCE_DB=/path/to/fifa_ng_db.db
 cargo test --release
 ```
+
+---
+
+## Contributing
+
+Issues and pull requests are welcome, whether that is a bug, a rough edge in the
+interface, or support for another game version.
+
+If you are changing how files are read or written, please add a test. The suite
+runs against real saves supplied through environment variables (see above), so a
+test can pin down real behaviour rather than an assumption.
 
 ---
 
