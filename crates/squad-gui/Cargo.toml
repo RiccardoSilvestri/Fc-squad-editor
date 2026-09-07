@@ -1,0 +1,13 @@
+[package]
+name = "squad-gui"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Desktop editor for EA Sports FC 25 squad save files"
+repository = "https://github.com/RiccardoSilvestri/Fc-squad-editor"
+
+[dependencies]
+squad-core = { path = "../squad-core" }
+iced = { version = "0.14", features = ["tokio", "image"] }
+rfd = "0.15"
+rust_xlsxwriter = "0.99.0"

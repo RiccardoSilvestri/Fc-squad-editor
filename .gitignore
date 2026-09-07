@@ -1,0 +1,11 @@
+/target
+**/*.rs.bk
+*.pdb
+
+*.db
+*.xlsx
+*.csv
+*.tsv
+assets/
+Squads*
+_*Squads*

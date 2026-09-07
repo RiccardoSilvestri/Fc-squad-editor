@@ -1,0 +1,12 @@
+[package]
+name = "squad-core"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Parser, editor and checksums for EA Sports FC 25 squad save files"
+repository = "https://github.com/RiccardoSilvestri/Fc-squad-editor"
+
+[dependencies]
+thiserror = "1"
+
+[dev-dependencies]
